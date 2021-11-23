@@ -10,7 +10,9 @@ class Rekins:
     self.izmers = izmers
     self.materials = materials
     
- self.veltijums = len(self.veltijums)
+   self.veltijuma_gar = len(self.veltijums)
+   self.izmeru_sar = self.izmers.split(',')
+   self.platums = self.izmeru_sar[0]
  
 
 
@@ -27,3 +29,11 @@ def aprekins(self):
 
 
 a = rekins(klients, izmers, veltijums, izmers)
+
+
+print(izmers)
+
+print(type(izmers))
+print(izmers.split(','))
+sad=izmers.split(',')
+print(sad[0])
