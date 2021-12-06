@@ -1,3 +1,6 @@
+import tkinter as tk
+window = tk.Tk()
+
 
 from PIL import Image
 
@@ -18,4 +21,3 @@ def bilde():
 
 
 bilde()
-
