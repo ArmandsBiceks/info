@@ -14,7 +14,7 @@ def sed_vietu_skaits(self, skaits):
 def biletes(self):
   return self.skaits * 0.5
 
-modelisX = transportlidzeklis('mersedess', 180, 2000,)
+modelisX = transportlidzeklis('mersedess', 100, 2000,)
 print(modelisX)
 
 class buss(transportlidzeklis):
