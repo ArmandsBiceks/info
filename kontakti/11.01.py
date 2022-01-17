@@ -1,14 +1,15 @@
 from replit import db
 
 def galvena_izvele():
-  print(sakums)
-  izvele=input('izveleta darbiba')
+ sakums = ("lmao")
+ print(sakums)
+ izvele=input('izveleta darbiba')
 
-  if izvele =='1':
+ if izvele =='1':
     kontaktu_piev()
-  elif izvele =='2':
+ elif izvele =='2':
     kont_atrasana()
-  else: 
+ else: 
     print('nav tādas, mēģini velreiz')
 
 while True:
