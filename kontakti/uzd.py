@@ -1,10 +1,10 @@
 import gramatina
 
 def kontaktu_piev():
-  vards= input('LUDZU IEVADIET KONTAKTA VARDU')
-  numurs= input('ludzu ievadiet kontakta numuru')
+  vards= input('LUDZU IEVADIET KONTAKTA VARDU:')
+  numurs= input('ludzu ievadiet kontakta numuru:')
   
-  print(f'pievieno{vards}"ar numuru -{numurs}')
+  print(f'pievieno-{vards}"ar numuru-{numurs}')
 
   gramatina.piev_kontaktu(vards, numurs)
 
@@ -12,7 +12,7 @@ kontaktu_piev()
 #kontaktu atrašana
 
 def kont_atrasana():
-  vards=input('ludzu ievadi kontakta vardu kuru mekle')
+  vards=input('ludzu ievadi kontakta vardu kuru meklē:')
   numurs= gramatina.atrod_kontaktu(vards)
   if numurs:
     print(f"{vards} numurs ir {numurs}")
@@ -31,7 +31,7 @@ def kontaktu_red():
 
   if iepr_numurs:
     jaunais_v=input(f"Ievadi {iepr_v} kontakta jauno vardu:").strip()
-    jaunais_n=input(f'ievadi {iepr_numurs} :')
+    jaunais_n=input(f'ievadi {iepr_numurs} jaunu num :')
 
     if not jaunais_n:
       jaunais_n=iepr_numurs
@@ -51,7 +51,11 @@ def kont_dzesana():
   numurs=gramatina.atrod_kontaktu(vards)
 
   if numurs:
-    lemums=input(f'vai jus tiesam velaties dzest kont{vards}-{numurs}?'(1-ja, 2-ne))
+    lemums=input(f'vai jus tiesam velaties dzest kont {vards}-{numurs}?(1-ja, 2-ne)')
+    if lemums =='1':
+      gramatina.dzest_kont(vards)
+    else:
+      print(f'kontakts {vards} netika dzēsts')
 
 
 
@@ -66,7 +70,7 @@ def galvena_izvele():
    kont_atrasana()
  elif izvele=='3':
    kontaktu_red()
-  elif izvele =='4'
+ elif izvele =='4':
    kont_dzesana()
  else: 
     print('nav tādas, mēģini velreiz')

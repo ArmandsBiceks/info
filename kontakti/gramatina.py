@@ -29,8 +29,9 @@ def mainit_numuru(iepr_v,jaunais_n):
 def mainit_kontaktu(iepr_v, jaunais_v,jaunais_n):
   db[jaunais_v]=jaunais_n
   del db[iepr_v]
-  print(f'KOntakta{iepr_v}jaunais vards ir{jaunais_v}')
+  print(f'Kontakta {iepr_v} jaunais vards ir {jaunais_v}')
 #dzesana
 def dzest_kont(vards):
   del db[vards]
   print(f'kontakts{vards} ir izdzēsts')  
+#stop
