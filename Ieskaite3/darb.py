@@ -1,6 +1,5 @@
 import food
 
-
 def pievienot_edienu():
   ed= input('Ievadiet jaunā ēdiena nosaukumu:')
   cena= input('Ievadiet jaunā ēdiena cenu:')
@@ -13,12 +12,12 @@ pievienot_edienu()
 
 
 def ediena_atrasana():
-  ed=input('ludzu ievadi ēdiena nosaukumu kuru meklē:')
+  ed=input('ludzu ievadi ēdienu kuru meklējat:')
   cena= food.atrod_edienu(ed)
   if cena:
-    print(f"{ed} cena ir {cena}")
+    print(f"{ed} cena ir ${cena}")
   else:
-    sakrit= food.ediena_meklesana(ed)
+    sakrit= food.edienu_meklesana(ed)
     if sakrit:
       for k in sakrit:
         print(f"{k}cena ir {sakrit[k]}")
@@ -58,11 +57,10 @@ def edienu_dzesana():
     else:
       print(f'{ed} netika dzēsts')
 
-
 def darbību_izvele():
- sakums = ("ēdienkarte")
+ sakums = ('Ēdienkarte')
  print(sakums)
- izvele=input('izveleta darbiba')
+ izvele=input('izvēlies darbibu\n 1-pievienot\n 2-meklēt\n 3-rediģēt\n 4-dzēst\n')
 
  if izvele =='1':
    pievienot_edienu()

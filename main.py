@@ -8,5 +8,3 @@ def piev_kontaktu(vards, tel_nr):
   else:
     db[vards]=tel_nr
     print(f'Pievienots:{vards}:{tel_nr}')
-    
-

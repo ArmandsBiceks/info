@@ -1,3 +1,4 @@
+
 from replit import db
 
 def pievienot_edienu(ed, cena):
