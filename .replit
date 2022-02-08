@@ -1,2 +1,2 @@
 languege='python3'
-run='python Ieskaite3/darb.py'
+run='python web_scrapping/08.py'
