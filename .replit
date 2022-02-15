@@ -1,2 +1,2 @@
 languege='python3'
-run='python web_scrapping/08.py'
+run='python flask1.py'
