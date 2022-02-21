@@ -1,2 +1,2 @@
 languege='python3'
-run='python flask1.py'
+run='python tekstafaili/faili.py'
