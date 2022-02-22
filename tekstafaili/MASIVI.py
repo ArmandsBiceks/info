@@ -17,13 +17,13 @@ Indekss|0|1|2|3|4|
 
 
 
-masivs=["A"B"C"D"E"]
+masivs=["A"'B'"C""E"]
 print(masivs)
 print(masivs[3])
 for x in masivs:
   print(x)
 
-vārdnīca={'Vārds':Jānis, 'Izglitība':'Vidēja','Vecums':20}
+vārdnīca={'Vārds':'Jānis', 'Izglitība':'Vidēja','Vecums':20}
 print(vārdnīca)
 print(vārdnīca[Vārds])
 vārdnīca['Alga']=2500
