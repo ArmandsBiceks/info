@@ -1,2 +1,2 @@
 languege='python3'
-run='python sqLite.py'
+run='python tekstafaili/jsonfaili.py'

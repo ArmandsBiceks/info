@@ -20,16 +20,14 @@ db.execute(""" INSERT INTO darbinieki
 
 db.commit()
 
-datu iegušana
+# datu iegušana
 dati=db.execute("""SELECT*FROM darbinieki
-                WHERE id=]
+                WHERE id= 1
                """)
-rezultats=dati.fetcha
+rezultats=dati.fetchall()
 print(rezultats)
 #tabulas izveide izmantojot id generesanu
-db.execute(
-"""
-CREATE TABLE IF NOT EXISTING
+db.execute("""CREATE TABLE IF NOT EXISTING
 (id  INTEGER  PRIMARY KEY  AUTOINCREMENT  NOT NULL,
 pceturksnis REAL,
 oceturksnis REAL,
@@ -38,17 +36,32 @@ cceturksnis REAL
 )
 """
 )
-p_ceturksnis=Input('Ievadi pirmā ceturksņa prēmiju')
-o_ceturksnis=Input('Ievadi otrā ceturksņa prēmiju')
-t_ceturksnis=Input('Ievadi trešā ceturksņa prēmiju')
-c_ceturksnis=Input('Ievadi ceturtā ceturksņa prēmiju')
-db.execute(
-"""
-INSERT INTO premijas
+p_ceturksnis=input('Ievadi pirmā ceturksņa prēmiju')
+o_ceturksnis=input('Ievadi otrā ceturksņa prēmiju')
+t_ceturksnis=input('Ievadi trešā ceturksņa prēmiju')
+c_ceturksnis=input('Ievadi ceturtā ceturksņa prēmiju')
+db.execute("""INSERT INTO premijas
 (pceturksnis, oceturksnis, tceturksnis, cceturksnis)
-VALUES[:'pceturksnis,':'p_ceturksnis','oceturksnis':o_ceturksnis,'tceturksnis':t_ceturknis,'cceturksnis':c_ceturksnis ]
+VALUES{:'pceturksnis,':p_ceturksnis,'oceturksnis':o_ceturksnis,'tceturksnis':t_ceturknis,'cceturksnis':c_ceturksnis }
 """
 )
-  db.commit()
+db.commit()
 dati =db.execute("""SELECT*FROM premijas
-                 WHERE id
+                 WHERE id=1
+                 """)
+rezultats=dati.fetchall()
+print(rezultats)
+
+dati=db.execute("""SELECT*FROM darbinieki
+                JOIN premijas
+                ON darbinieki.id=premijas.id
+                """)
+rezultats=dati.fetchall()
+print(rezultats)
+
+for rinda in rezultats:
+  print("ID",rinda[0])
+  print("Vārds",rinda[1])
+  print("Alga",rinda[2])
+  print("Komentārs",rinda[3])
+db.close()

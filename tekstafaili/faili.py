@@ -16,8 +16,12 @@ fails.close()
 with open('pirmais.txt',"r",encoding="utf-8") as f:
   print(f.read())
   print(f.readline())
+  file.seek(0) #uz sakumu
 
-
-
+  print(file.readline()
+      
 with open('pirmais.txt',"a",encoding="utf-8") as f:
- f.write("Es esmu te")
+  f.write("Es esmu te")
+
+with open("pirmais.txt","w",encoding="utf-8") as file:
+  file.write("Kas notika?")
