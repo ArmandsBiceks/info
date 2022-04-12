@@ -1,2 +1,2 @@
 languege='python3'
-run='python tekstafaili/jsonfaili.py'
+run='python spēle.py'

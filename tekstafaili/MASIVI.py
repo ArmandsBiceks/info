@@ -25,8 +25,11 @@ for x in masivs:
 
 vārdnīca={'Vārds':'Jānis', 'Izglitība':'Vidēja','Vecums':20}
 print(vārdnīca)
-print(vārdnīca[Vārds])
-vārdnīca['Alga']=2500
+print(vārdnīca [Vārds] )
+personas = [
+    {"Vārds":"Jānis","Izglītība":"Vidējā","Vecums":45},
+    {"Vārds":"Viesturis","Izglītība":"Augstākā","Vecums":27}
+]
 print(vārdnīca)
 
 for persona in personas:

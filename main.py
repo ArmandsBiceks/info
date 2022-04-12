@@ -8,3 +8,16 @@ def piev_kontaktu(vards, tel_nr):
   else:
     db[vards]=tel_nr
     print(f'Pievienots:{vards}:{tel_nr}')
+
+
+
+sg.TabGroup('Spēlētāju dati, layout2')]])
+
+  sg.Button('Aizvērt')]
+
+layout2=[[sg.text('spēlētāju dati')]]
+
+tabgrp=[
+  [
+    sg.TabGroup[
+      sg.Tab('spēle, layout')
