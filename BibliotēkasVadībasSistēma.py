@@ -64,4 +64,48 @@ def Klients_info_print(self):
               INSERT INTO klients
               (vards, uzvards, per_kods, tel_nr)
               VALUES(:vards,:uzvards, :per_kods, :tel_nr)
-              """)
+              """,
+  {"vards":self.vards,"uzvards":self.uzvards,"per_kods":self.per_kods, "tel_nr":self.tel_nr})
+
+  db.commit()
+def datuIzvade(self):
+  db=sqlite3.connect("dati.db")
+  dati=db.execute("""
+                 SELECT * FROM gramatas
+                 JOIN klients
+                 ON gramatas.id=klients.id
+                 """)
+  rezultāts=dati.fetchall()
+  return rezultāts
+
+import PySimpleGUI as sg
+
+sg.theme("DarkAmber")
+layout=[sg.Text("Bibliotēkas informācijas sistēma")],
+[sg.Text("Autors:"), sg.InputText()],
+[sg.Text("Nosaukums"), sg.InputText()],
+[sg.Button("meklēt")]
+
+layout2 = [[sg.Text("Izvēlētā grāmata:", key= "-GRAMATA-")],
+[sg.Text("Vārds:"), sg.InputText()],
+[sg.Text("Uzvārds:"), sg.InputText()],
+[sg.Text("Personas kods:"), sg.InputText()],
+[sg.Text("Telefona numurs:"), sg.InputText()],
+[sg.Button("Pirkt")],
+[sg.Text("Šeit būs personas dati", key='-DATI-')]]
+
+layout3= [[sg.Text('Dati', key='-DATI-')]]
+
+tabgrp = ([
+  [
+    sg.Tab('Grāmata',layout),
+    sg.Tab('Pirkt', layout2),
+    sg.Tab('Dati', layout3)
+  ]]),
+sg.Button('Aizvērt')
+  ]  
+  ]
+
+window=sg.Window("InfSistema",tabgrp)
+while True:
+  event, values = window.read()
