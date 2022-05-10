@@ -96,16 +96,42 @@ layout2 = [[sg.Text("Izvēlētā grāmata:", key= "-GRAMATA-")],
 
 layout3= [[sg.Text('Dati', key='-DATI-')]]
 
-tabgrp = ([
+tabgrp = [
   [
+    sg.TabGroup([[
     sg.Tab('Grāmata',layout),
     sg.Tab('Pirkt', layout2),
     sg.Tab('Dati', layout3)
   ]]),
 sg.Button('Aizvērt')
   ]  
-  ]
+] 
 
 window=sg.Window("InfSistema",tabgrp)
 while True:
   event, values = window.read()
+  if event =="Meklēt":
+    autors=values[0]
+    nosaukums=values[1]
+    gramata=BblVald(autors, nosaukums)
+    gramata.gramata()
+    window['-CENA-'].update(gramata.cena)
+
+    
+  if event=="Pirkt":
+    vards=values[2]
+    uzvards=values[3]
+    per_kods=values[4]
+    tel_nr=values[5]
+
+    window["-DATI-"].update(gramata.Klients_info(vards,uzvards,per_kods,tel_nr))
+    
+  gramata.Pakalpojuma_info_print()
+  gramata.Klients_info_print()
+
+  window["-DATUB-"].update(gramata.datuIzvade())
+
+  if event in (sg.WIN_CLOSED, "Aizvērt"):
+    break
+
+window.close()
